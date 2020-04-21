@@ -10,5 +10,7 @@ The base distribution is Archlinux-Arm (alarm) but the methods should be, in pri
 
 The OGFX project aims to combine readily available software and easy to build hardware into a hackable, nerd-friendly, usable guitar effects platform.
 
-# Some Images
+# What it looks like
+
+![a photo](https://github.com/OGFX/ogfx-overview/raw/master/IMG_20200421_123438.jpg)
 
