@@ -60,8 +60,16 @@ After the system rebooted your changes should have been made.
 
 ## Change the USB device name
 
-- Change the last argument in the <code>services.jack.jackd.extraOptions</code> line in <code>/etc/nixos/configuration.nix</code> to the ALSA pcm name of your USB device. Now run <code>nixos-rebuild switch</code> and reboot (or optionally run <code>sudo systemctl restart jack</pre> and reattach your USB device. Use <code>journalctl -u jack</code> to check for jack's output and also <code>journalctl -u ogfx-frontend</code> to see if the ogfx web UI started.
+- Change the last argument in the <code>services.jack.jackd.extraOptions</code> line in <code>/etc/nixos/configuration.nix</code> to the ALSA pcm name of your USB device. Now run <code>nixos-rebuild switch</code> and reboot (or optionally run <code>sudo systemctl restart jack</code> and reattach your USB device. Use <code>journalctl -u jack</code> to check for jack's output and also <code>journalctl -u ogfx-frontend</code> to see if the ogfx web UI started.
 
 # Point your browser to the system on port 8080
 
 - Now you're ready to play with the system.
+
+# Back up your <code>/etc/nixos/configuration.nix</code>
+
+- Even if you have to reflash a new SD card with the original OGFX image: Afterwards just copy your <code>configuration.nix</code> back over and your system should be ready to go. 
+
+# Back up your <code>~/.local/share/ogfx</code> folder
+
+- It has your setups and racks and things..
