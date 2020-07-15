@@ -25,3 +25,43 @@ The system is useful for us but it is not useful for the general public yet. We 
 - http://github.com/OGFX/ogfx-tools Some tools supporting the ogfx-ui
 - http://github.com/OGFX/jack2 A fork of jack2
 - http://github.com/OGFX/ogfx-nixos-rpi4 This repository contains the nix expressions to generate a bootable SD card image containing the OGFX system
+
+# I prepared the SD-card with the image and booted it - What now?
+
+## Establish a network connection to the system
+
+- You need to log into the system. There are mainly two ways:
+
+  1. Plug in an ethernet cable. The system is configured to use DHCP from your network. It will, if local name resolution is supported by your router, be reachable under the hostname "ogfx". If not, look into your router's interface and find the device.
+  
+  2. Connect to the WIFI-network with ESSID "ogfx" which has been brought up by the system. Your device might complain about no internet access being available on this network - Connect to it anyways! The device will have the IP address 192.168.150.1. The passphrase is "omg it's fx"
+  
+After figuring out which of the two steps above you needed connect to the device via SSH on port 22 (the standard port). The username is "ogfx" and the password is "ogfx".
+
+## Change passswords, ESSID
+
+- Use an editor to change the file <code>/etc/nixos/configuration.nix</code>. At least <code>vim</code> and <code>nano</code> are included. The user "ogfx" is in the sudoers list, so use <code>sudo</code> to edit that file. The <code>networking</code> section has the hostname of the device. The <code>hostapd</code> section has the ESSID and passphrase for the WIFI access point. Change those to your liking.
+
+- After changing configuration.nix run this command to instantiate the changes:
+
+<pre>
+nixos-rebuild switch
+</pre>
+
+and reboot afterwards:
+
+<pre>
+sudo reboot
+</pre>
+
+After the system rebooted your changes should have been made.
+
+- Use the usual <code>passwd</code> command to change the password of the "ogfx" user.
+
+## Change the USB device name
+
+- Change the last argument in the <code>services.jack.jackd.extraOptions</code> line in <code>/etc/nixos/configuration.nix</code> to the ALSA pcm name of your USB device. Now run <code>nixos-rebuild switch</code> and reboot (or optionally run <code>sudo systemctl restart jack</pre> and reattach your USB device. Use <code>journalctl -u jack</code> to check for jack's output and also <code>journalctl -u ogfx-frontend</code> to see if the ogfx web UI started.
+
+# Point your browser to the system on port 8080
+
+- Now you're ready to play with the system.
