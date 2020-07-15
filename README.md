@@ -32,7 +32,7 @@ The system is useful for us but it is not useful for the general public yet. We 
 
 - You need to log into the system. There are mainly two ways:
 
-  1. Plug in an ethernet cable. The system is configured to use DHCP from your network. It will, if local name resolution is supported by your router, be reachable under the hostname "ogfx". If not, look into your router's interface and find the device.
+  1. Plug in an ethernet cable. The system is configured to use DHCP from your network. It will, if local name resolution is supported by your router, be reachable under the hostname "ogfx". If not, look into your router's interface and find the device. You will need to use this way for the initial setup of the system because some software artifacts will have to be downloaded.
   
   2. Connect to the WIFI-network with ESSID "ogfx" which has been brought up by the system. Your device might complain about no internet access being available on this network - Connect to it anyways! The device will have the IP address 192.168.150.1. The passphrase is "omg it's fx"
   
@@ -45,7 +45,7 @@ After figuring out which of the two steps above you needed connect to the device
 - After changing configuration.nix run this command to instantiate the changes:
 
 <pre>
-nixos-rebuild switch
+sudo nixos-rebuild switch
 </pre>
 
 and reboot afterwards:
@@ -54,7 +54,7 @@ and reboot afterwards:
 sudo reboot
 </pre>
 
-After the system rebooted your changes should have been made.
+After the system rebooted your changes should have been made. 
 
 - Use the usual <code>passwd</code> command to change the password of the "ogfx" user.
 
