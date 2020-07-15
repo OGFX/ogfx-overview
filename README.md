@@ -1,4 +1,4 @@
-# ogfx
+# OGFX - Open Guitar Effects
 
 A high level overview of the OGFX project.
 
