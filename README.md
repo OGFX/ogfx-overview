@@ -1,8 +1,8 @@
-# ogfx-overview
+# ogfx
 
 A high level overview of the OGFX project.
 
-# Rationale
+## Rationale
 
 Since the new Raspberry Pi4 dropped we were amazed to find that it finally offers a working USB3 host which can drive an USB class audio 2.0 device. 
 
@@ -10,15 +10,15 @@ The system image is based on nixos/nixpkgs. The code to reproduce them can be fo
 
 The OGFX project aims to combine readily available software and easy to build hardware into a hackable, nerd-friendly, usable guitar effects platform.
 
-# OGFX is not ready yet
+## OGFX is not ready yet
 
 The system is useful for us but it is not useful for the general public yet. We will release a version 0.1 when we think this has changed.
 
-# What it looks like
+## What it looks like
 
 ![a photo](https://github.com/OGFX/ogfx-overview/raw/master/IMG_20200421_123438.jpg)
 
-# An overview of the other repositories:
+## An overview of the other repositories:
 
 - http://github.com/OGFX/nixpkgs A fork of nixpkgs from the NIXOS operating system. This repository contains a branch called ogfx-nixos-20.03 which is the one the OGFX system is based upon
 - http://github.com/OGFX/ogfx-ui A web frontend for the OGFX system,
@@ -26,9 +26,9 @@ The system is useful for us but it is not useful for the general public yet. We 
 - http://github.com/OGFX/jack2 A fork of jack2
 - http://github.com/OGFX/ogfx-nixos-rpi4 This repository contains the nix expressions to generate a bootable SD card image containing the OGFX system
 
-# I prepared the SD-card with the image and booted it - What now?
+## I prepared the SD-card with the image and booted it - What now?
 
-## Establish a network connection to the system
+### Establish a network connection to the system
 
 - You need to log into the system. There are mainly two ways:
 
@@ -38,7 +38,7 @@ The system is useful for us but it is not useful for the general public yet. We 
   
 After figuring out which of the two steps above you needed connect to the device via SSH on port 22 (the standard port). The username is "ogfx" and the password is "ogfx".
 
-## Change passswords, ESSID
+### Change passswords, ESSID
 
 - Use an editor to change the file <code>/etc/nixos/configuration.nix</code>. At least <code>vim</code> and <code>nano</code> are included. The user "ogfx" is in the sudoers list, so use <code>sudo</code> to edit that file. The <code>networking</code> section has the hostname of the device. The <code>hostapd</code> section has the ESSID and passphrase for the WIFI access point. Change those to your liking.
 
@@ -58,18 +58,18 @@ After the system rebooted your changes should have been made.
 
 - Use the usual <code>passwd</code> command to change the password of the "ogfx" user.
 
-## Change the USB device name
+### Change the USB device name
 
 - Change the last argument in the <code>services.jack.jackd.extraOptions</code> line in <code>/etc/nixos/configuration.nix</code> to the ALSA pcm name of your USB device. Now run <code>nixos-rebuild switch</code> and reboot (or optionally run <code>sudo systemctl restart jack</code> and reattach your USB device. Use <code>journalctl -u jack</code> to check for jack's output and also <code>journalctl -u ogfx-frontend</code> to see if the ogfx web UI started.
 
-# Point your browser to the system on port 8080
+### Point your browser to the system on port 8080
 
 - Now you're ready to play with the system.
 
-# Back up your <code>/etc/nixos/configuration.nix</code>
+## Back up your <code>/etc/nixos/configuration.nix</code>
 
 - Even if you have to reflash a new SD card with the original OGFX image: Afterwards just copy your <code>configuration.nix</code> back over and your system should be ready to go. 
 
-# Back up your <code>~/.local/share/ogfx</code> folder
+## Back up your <code>~/.local/share/ogfx</code> folder
 
 - It has your setups and racks and things..
