@@ -22,7 +22,13 @@ The system is useful for us but it is not useful for the general public yet. We 
 
 ### Software
 
+#### Desktop
+
 ![a screenshot](https://github.com/OGFX/ogfx-overview/raw/master/pic-20200718-070746.png)
+
+#### Mobile
+
+![another screenshot](https://github.com/OGFX/ogfx-overview/raw/master/Screenshot_20200718-073747_Firefox.png)
 
 ## An overview of the other repositories:
 
