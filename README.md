@@ -88,6 +88,8 @@ After the system rebooted your changes should have been made.
 
 ### Hardware
 
+This is fps' personal setup. Yours might look completely different.
+
 ![a photo](https://github.com/OGFX/ogfx-overview/raw/master/IMG_20200421_123438.jpg)
 
 ### Software
