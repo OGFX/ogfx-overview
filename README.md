@@ -36,6 +36,12 @@ The system is useful for us but it is not useful for the general public yet. We 
 - http://github.com/OGFX/ogfx-nixos-rpi4 This repository contains the nix expressions to generate a bootable SD card image containing the OGFX system
 - https://github.com/OGFX/ogfx-midi-controller The firmware for a teensy based midi controller
 
+## Found a bug? Report it!
+
+If you know what component has the bug, then please file an issue in the respective repository's issue tracker. Otherwise just file the bug in this repository:
+
+https://github.com/OGFX/ogfx-overview/issues
+
 ## I prepared the SD-card with the image and booted it - What now?
 
 ### Establish a network connection to the system
