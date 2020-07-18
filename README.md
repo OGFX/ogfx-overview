@@ -34,6 +34,7 @@ The system is useful for us but it is not useful for the general public yet. We 
 - http://github.com/OGFX/ogfx-tools Some tools supporting the ogfx-ui
 - http://github.com/OGFX/jack2 A fork of jack2
 - http://github.com/OGFX/ogfx-nixos-rpi4 This repository contains the nix expressions to generate a bootable SD card image containing the OGFX system
+- https://github.com/OGFX/ogfx-midi-controller The firmware for a teensy based midi controller
 
 ## I prepared the SD-card with the image and booted it - What now?
 
