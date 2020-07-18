@@ -10,6 +10,19 @@ The system image is based on nixos/nixpkgs. The code to reproduce them can be fo
 
 The OGFX project aims to combine readily available software and easy to build hardware into a hackable, nerd-friendly, usable guitar effects platform.
 
+## Software components
+
+This is a broad overview of the software components of the system:
+
+* nixos/nixpkgs are used as the base of the system
+* a realtime kernel (PREEMT_RT_FULL). The raspberrypi foundation fork of the linux kernel patched with realtime preemption patches. We also adjust the priorities of the threaded interrupt handler of the usb3 host slightly.
+* one instance of jalv (made by drobilla, the author of the LV2 plugin standard) per plugin
+* LV2 plugins including guitarix, fomp, swh, zam, mda, ...
+* jack2 a.k.a jackdm
+* hostapd and dnsmasq to turn the pi into an access point enabling editing setups from mobile devices
+* ogfx-ui, the web frontend, written in python 3.7
+* ogfx-tool, some helper tools, mostly c++
+
 ## OGFX is not ready yet
 
 The system is useful for us but it is not useful for the general public yet. We will release a version 0.1 when we think this has changed.
