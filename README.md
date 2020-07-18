@@ -14,22 +14,6 @@ The OGFX project aims to combine readily available software and easy to build ha
 
 The system is useful for us but it is not useful for the general public yet. We will release a version 0.1 when we think this has changed.
 
-## What it looks like
-
-### Hardware
-
-![a photo](https://github.com/OGFX/ogfx-overview/raw/master/IMG_20200421_123438.jpg)
-
-### Software
-
-#### Desktop
-
-![a screenshot](https://github.com/OGFX/ogfx-overview/raw/master/pic-20200718-070746.png)
-
-#### Mobile
-
-![another screenshot](https://github.com/OGFX/ogfx-overview/raw/master/Screenshot_20200718-073747_Firefox.png)
-
 ## An overview of the other repositories:
 
 - http://github.com/OGFX/nixpkgs A fork of nixpkgs from the NIXOS operating system. This repository contains a branch called ogfx-nixos-20.03 which is the one the OGFX system is based upon
@@ -85,3 +69,20 @@ After the system rebooted your changes should have been made.
 ## Back up your <code>~/.local/share/ogfx</code> folder
 
 - It has your setups and racks and things..
+
+## What it looks like
+
+### Hardware
+
+![a photo](https://github.com/OGFX/ogfx-overview/raw/master/IMG_20200421_123438.jpg)
+
+### Software
+
+#### Desktop
+
+![a screenshot](https://github.com/OGFX/ogfx-overview/raw/master/pic-20200718-070746.png)
+
+#### Mobile
+
+![another screenshot](https://github.com/OGFX/ogfx-overview/raw/master/Screenshot_20200718-073747_Firefox.png)
+
