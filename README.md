@@ -16,7 +16,13 @@ The system is useful for us but it is not useful for the general public yet. We 
 
 ## What it looks like
 
+### Hardware
+
 ![a photo](https://github.com/OGFX/ogfx-overview/raw/master/IMG_20200421_123438.jpg)
+
+### Software
+
+![a screenshot](https://github.com/OGFX/ogfx-overview/raw/master/pic-20200718-070746.png)
 
 ## An overview of the other repositories:
 
