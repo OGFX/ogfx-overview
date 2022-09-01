@@ -4,22 +4,18 @@ A high level overview of the OGFX project.
 
 ## Rationale
 
-Since the new Raspberry Pi4 dropped we were amazed to find that it finally offers a working USB3 host which can drive an USB class audio 2.0 device. 
-
-The system image is based on nixos/nixpkgs. The code to reproduce them can be found in the other repos in the OGFX organization.
-
-The OGFX project aims to combine readily available software and easy to build hardware into a hackable, nerd-friendly, usable guitar effects platform.
+The OGFX project aims to combine readily available software and easy to build hardware into a hackable, nerd-friendly, usable (guitar) effects platform.
 
 ## Software components
 
 This is a broad overview of the software components of the system:
 
 * nixos/nixpkgs are used as the base of the system
-* a realtime kernel (PREEMT_RT_FULL). The raspberrypi foundation fork of the linux kernel patched with realtime preemption patches. We also adjust the priorities of the threaded interrupt handler of the usb3 host slightly.
+* a realtime kernel (PREEMT_RT_FULL).
 * one instance of jalv (made by drobilla, the author of the LV2 plugin standard) per plugin
 * LV2 plugins including guitarix, fomp, swh, zam, mda, ...
-* jack2 a.k.a jackdm
-* hostapd and dnsmasq to turn the pi into an access point enabling editing setups from mobile devices
+* jack2 a.k.a jackdmp
+* hostapd and dnsmasq to turn the machine into an access point enabling editing setups from mobile devices
 * ogfx-ui, the web frontend, written in python 3.7
 * ogfx-tool, some helper tools, mostly c++
 
@@ -34,6 +30,7 @@ The system is useful for us but it is not useful for the general public yet. We 
 - http://github.com/OGFX/ogfx-tools Some tools supporting the ogfx-ui
 - http://github.com/OGFX/jack2 A fork of jack2
 - http://github.com/OGFX/ogfx-nixos-rpi4 This repository contains the nix expressions to generate a bootable SD card image containing the OGFX system
+- http://github.com/OGFX/ogfx86 A x86 based variant nixos configuration
 - https://github.com/OGFX/ogfx-midi-controller The firmware for a teensy based midi controller
 
 ## Found a bug? Report it!
@@ -81,10 +78,6 @@ After the system rebooted your changes should have been made.
 ### Point your browser to the system on port 8080
 
 - Now you're ready to play with the system.
-
-## Back up your <code>/etc/nixos/configuration.nix</code>
-
-- Even if you have to reflash a new SD card with the original OGFX image: Afterwards just copy your <code>configuration.nix</code> back over and your system should be ready to go. 
 
 ## Back up your <code>~/.local/share/ogfx</code> folder
 
